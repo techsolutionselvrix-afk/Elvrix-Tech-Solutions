@@ -21,7 +21,7 @@ const services = [
   },
   {
     num: '03',
-    title: 'AI & Machine Learning',
+    title: 'Digital Marketing',
     desc: 'Embed intelligence into your product — predictive analytics, NLP, computer vision, and generative AI.',
     tags: ['TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face'],
   },

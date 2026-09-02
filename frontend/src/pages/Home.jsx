@@ -168,7 +168,7 @@ export default function Home() {
           <div className="page-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px', border: '1px solid var(--color-border)' }}>
             {[
               { title: 'Cloud Infrastructure', num: '01', desc: 'Design and deploy robust, scalable cloud environments on AWS, GCP, and Azure.' },
-              { title: 'AI & Machine Learning', num: '02', desc: 'Integrate predictive models, NLP, and computer vision into your product.' },
+              { title: 'Digital Marketing', num: '02', desc: 'We accelerate business growth by connecting brands with their ideal customers.' },
               { title: 'Web App Development', num: '03', desc: 'Premium, high-performance web applications built with React, Next.js and more.' },
               { title: 'Mobile Development', num: '04', desc: 'Cross-platform mobile apps that feel native on iOS and Android.' },
               { title: 'UI / UX Design', num: '05', desc: 'Intuitive, beautiful interfaces that convert users into loyal customers.' },
