@@ -52,8 +52,8 @@ export default function Contact() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                 {[
-                  { label: 'Email', value: 'hello@elvrix.tech' },
-                  { label: 'Phone', value: '+1 (555) 000-0000' },
+                  { label: 'Email', value: 'mailto:elvrixtechsolution@gmail.com' },
+                  { label: 'Phone', value: '+91 90962 87077' },
                   { label: 'Response Time', value: 'Within 24 hours' },
                 ].map(({ label, value }) => (
                   <div key={label} style={{ paddingBottom: '2rem', borderBottom: '1px solid var(--color-border)' }}>
