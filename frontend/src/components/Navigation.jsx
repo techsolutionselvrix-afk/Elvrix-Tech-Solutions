@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from "../assets/logo.png";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,6 +26,7 @@ export default function Navigation() {
     { to: '/', label: 'Home' },
     { to: '/service', label: 'Services' },
     { to: '/about', label: 'About Us' },
+    {to:'/blog',label:'Blog'},
     { to: '/work', label: 'Work' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -34,7 +36,7 @@ export default function Navigation() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-content">
           <Link to="/" className="logo">
-            Elvrix<span className="logo-dot">.</span>Tech
+           <img style={{width:"70px",height:"70px"}} src={logo} alt="" />
           </Link>
 
           {/* Desktop links */}

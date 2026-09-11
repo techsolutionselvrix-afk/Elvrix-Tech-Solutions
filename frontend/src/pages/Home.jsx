@@ -28,10 +28,13 @@ export default function Home() {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ textAlign: 'center', marginBottom: '3rem' }}
+            style={{ textAlign: 'center', marginBottom: '1rem' }}
           >
-            ELVRIX TECH
+            ELVRIX 
+           
           </motion.div>
+           <p style={{textAlign:"center",fontSize:"2rem"}}>TECH SOLUTION</p>
+          
 
           {/* Thin divider line */}
           <div style={{ width: '100%', height: '1px', background: 'var(--color-border)', marginBottom: '3rem' }} />
@@ -92,24 +95,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ─── STATS ─── */}
-      <section className="section-sm" style={{ borderBottom: '1px solid var(--color-border)', background: 'var(--color-surface)' }}>
-        <div className="container">
-          <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
-            {[
-              { number: '120+', label: 'Projects Delivered' },
-              { number: '98%', label: 'Client Satisfaction' },
-              { number: '5+', label: 'Years of Experience' },
-              { number: '40+', label: 'Technologies Used' },
-            ].map((stat, i) => (
-              <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i} style={{ padding: '2rem 1rem' }}>
-                <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* ─── PROVIDED IMAGES ─── */}
       <section className="section" style={{ background: 'var(--color-bg)' }}>
