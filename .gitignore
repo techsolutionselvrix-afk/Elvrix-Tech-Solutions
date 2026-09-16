@@ -8,14 +8,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Python & Backend
-venv/
-backend/venv/
-__pycache__/
-*/__pycache__/
-*/**/__pycache__/
-*.py[cod]
-*$py.class
+# Env
 *.env
 .env
 .env.local

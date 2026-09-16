@@ -97,44 +97,6 @@ export default function Home() {
 
     
 
-      {/* ─── PROVIDED IMAGES ─── */}
-      <section className="section" style={{ background: 'var(--color-bg)' }}>
-        <div className="container">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ marginBottom: '3rem' }}>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>Our Clents</div>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 400 }}>Collaborations<br /><span className="accent-text">Analysis Datasets</span></h2>
-          </motion.div>
-
-          <div className="img-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px', border: '1px solid var(--color-border)' }}>
-            {[
-              "3DIMG_01AUG2019_0130_L2B_CP_ASI_V04.0_BBAL.jpg",
-              "3DIMG_01AUG2019_0130_L2B_CP_ASI_V04.0_BBLW.jpg",
-              "3DIMG_01AUG2019_0130_L2B_CP_ASI_V04.0_EMIT.jpg",
-              "3DIMG_01AUG2019_0130_L2B_CP_ASI_V04.0_PBOT.jpg",
-              "3DIMG_01AUG2019_0130_L2B_CP_ASI_V04.0_PEFF.jpg",
-              "3DIMG_01AUG2019_0130_L2B_CP_ASI_V04.0_PHAS.jpg"
-            ].map((img, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={idx * 0.1}
-                style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-surface)', cursor: 'pointer', borderRight: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}
-              >
-                <img
-                  src={`/images/${img}`}
-                  alt={`Analysis Map ${idx + 1}`}
-                  style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                <div style={{ padding: '1rem 1.25rem', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-text-muted)' }}>Map {idx + 1}</span>
-                  <span className="tag">Satellite</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ─── SERVICES PREVIEW ─── */}
       <section className="section" style={{ background: 'var(--color-surface)' }}>
@@ -181,13 +143,13 @@ export default function Home() {
 
       {/* ─── CTA BANNER ─── */}
       <section style={{ background: 'var(--color-surface-dark)', padding: '6rem 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.04, fontSize: '18rem', fontFamily: 'var(--font-family-display)', fontWeight: 400, whiteSpace: 'nowrap', color: 'var(--color-bg)', pointerEvents: 'none', letterSpacing: '-0.05em' }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.04, fontSize: '18rem', fontFamily: 'var(--font-family-display)', fontWeight: 400, whiteSpace: 'nowrap', color: 'var(--color-on-dark)', pointerEvents: 'none', letterSpacing: '-0.05em' }}>
           ELVRIX
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <div className="section-label" style={{ justifyContent: 'center', marginBottom: '1.5rem', color: 'rgba(247,244,237,0.5)' }}>Ready to Start?</div>
-            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 400, color: 'var(--color-bg)', marginBottom: '2rem', lineHeight: 1.1 }}>
+            <div className="section-label" style={{ justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--color-on-dark-muted)' }}>Ready to Start?</div>
+            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 400, color: 'var(--color-on-dark)', marginBottom: '2rem', lineHeight: 1.1 }}>
               Let's Build Something<br />
               <span style={{ color: 'var(--color-accent)' }}>Remarkable Together</span>
             </h2>

@@ -10,6 +10,7 @@ import Work from './pages/Work';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetail';
+import { applyIndiaTheme, msUntilNextIndiaThemeSwitch } from './theme/indiaTheme';
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,30 @@ function App() {
       autoRaf: true,
     });
     return () => lenis.destroy();
+  }, []);
+
+  useEffect(() => {
+    applyIndiaTheme();
+    let timeoutId;
+
+    const schedule = () => {
+      timeoutId = window.setTimeout(() => {
+        applyIndiaTheme();
+        schedule();
+      }, msUntilNextIndiaThemeSwitch());
+    };
+
+    schedule();
+
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') applyIndiaTheme();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
   }, []);
 
   return (

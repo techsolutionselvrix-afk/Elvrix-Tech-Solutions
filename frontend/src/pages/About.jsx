@@ -61,7 +61,7 @@ export default function About() {
                   We don't just build software. We build the foundation on which your next decade of growth is built.
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--color-surface-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-bg)', fontSize: '1rem' }}>AV</div>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'var(--color-surface-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-on-dark)', fontSize: '1rem' }}>AV</div>
                   <div>
                     <div style={{ fontWeight: 400, fontSize: '0.9rem' }}>Aria Vance</div>
                     <div style={{ fontSize: '0.75rem', letterSpacing: '0.08em', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>CEO & Co-Founder</div>
