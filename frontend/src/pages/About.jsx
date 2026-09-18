@@ -95,7 +95,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ─── Team ─── */}
+      {/* ─── Team ───
       <section className="section">
         <div className="container">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ marginBottom: '3rem' }}>
@@ -117,7 +117,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
