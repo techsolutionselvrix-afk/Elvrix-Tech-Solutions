@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Sun, Moon } from 'lucide-react';
 import logo from "../assets/logo.png";
+import { applyIndiaTheme, getCurrentTheme } from '../theme/indiaTheme';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(getCurrentTheme());
   const location = useLocation();
 
   useEffect(() => {
@@ -12,6 +15,18 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Sync theme with custom event
+  useEffect(() => {
+    const handleThemeChange = () => setTheme(getCurrentTheme());
+    window.addEventListener('themechange', handleThemeChange);
+    return () => window.removeEventListener('themechange', handleThemeChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    applyIndiaTheme(newTheme);
+  };
 
   // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [location]);
@@ -52,21 +67,31 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <Link to="/contact" className="btn btn-primary nav-cta-btn" style={{ fontSize: '0.75rem', padding: '0.6rem 1.5rem' }}>
-            Get in Touch
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <button
+              onClick={toggleTheme}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text)', display: 'flex', alignItems: 'center', padding: '0.5rem' }}
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
 
-          {/* Hamburger button (mobile only) */}
-          <button
-            className={`mobile-menu-btn ${menuOpen ? 'open' : ''}`}
-            onClick={() => setMenuOpen(o => !o)}
-            aria-label="Toggle menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+            {/* Desktop CTA */}
+            <Link to="/contact" className="btn btn-primary nav-cta-btn" style={{ fontSize: '0.75rem', padding: '0.6rem 1.5rem' }}>
+              Get in Touch
+            </Link>
+
+            {/* Hamburger button (mobile only) */}
+            <button
+              className={`mobile-menu-btn ${menuOpen ? 'open' : ''}`}
+              onClick={() => setMenuOpen(o => !o)}
+              aria-label="Toggle menu"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </nav>
 

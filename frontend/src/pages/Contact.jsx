@@ -7,16 +7,39 @@ const fadeUp = {
 };
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', message: '', service: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', message: '', service: '' });
   const [status, setStatus] = useState('idle'); // idle | sending | sent
+
+  // TODO: Replace this with your deployed Google Script Web App URL
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyDoeCHJelX6t0Kp57JRiNV0KMc47yBe8C0uL13NoaqO6JxXvHJMnECQN352v3_cZTlGA/exec";
+
 
   const handleChange = (e) => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    await new Promise(r => setTimeout(r, 1500));
-    setStatus('sent');
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        // The no-cors mode is often required for simple Google Apps Script setups 
+        // to avoid CORS errors in the browser, but it means you won't get a readable response.
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form)
+      });
+
+      // With no-cors, response.ok is always false, so we assume success if it didn't throw an error.
+      setStatus('sent');
+      setForm({ name: '', email: '', phone: '', company: '', message: '', service: '' }); // Clear form
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('idle');
+      alert('There was an error sending your message. Please try again.');
+    }
   };
 
   return (
@@ -52,7 +75,7 @@ export default function Contact() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                 {[
-                  { label: 'Email', value: 'mailto:elvrixtechsolution@gmail.com' },
+                  { label: 'Email', value: 'elvrixtechsolution@gmail.com' },
                   { label: 'Phone', value: '+91 90962 87077' },
                   { label: 'Response Time', value: 'Within 24 hours' },
                 ].map(({ label, value }) => (
@@ -90,9 +113,15 @@ export default function Contact() {
                       <input id="email" name="email" type="email" required className="form-input" placeholder="john@company.com" value={form.email} onChange={handleChange} />
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="company">Company / Organization</label>
-                    <input id="company" name="company" type="text" className="form-input" placeholder="Acme Corp" value={form.company} onChange={handleChange} />
+                  <div className="form-row-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="phone">Phone Number</label>
+                      <input id="phone" name="phone" type="tel" className="form-input" placeholder="+1 234 567 8900" value={form.phone} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="company">Company / Organization</label>
+                      <input id="company" name="company" type="text" className="form-input" placeholder="Acme Corp" value={form.company} onChange={handleChange} />
+                    </div>
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="service">Service of Interest</label>
