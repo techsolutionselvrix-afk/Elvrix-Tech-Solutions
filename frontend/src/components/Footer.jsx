@@ -16,35 +16,35 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
               {[
-                 {
-                   icon: <FaInstagram />,
-                   url: 'https://www.instagram.com/elvrix_techsolutions?igsi=MTRwZ3pkMTAyMjZycA==',
-                   label: 'Twitter'
-                   },
-                   {
-                     icon: <FaLinkedinIn />,
-                     url: 'https://linkedin.com/company/elvrix-techsolutions',
-                     label: 'LinkedIn'
-                   },
-                   {
-                     icon: <FaGithub />,
-                     url: 'https://github.com/elvrixtechsolutions',
-                     label: 'GitHub' 
-                    } ].map(({icon,url,label}) => (
-                <a key={label}
-                   href={url}
-                   target='_blank'
-                   rel='noopner noreferrer'
-                   aria-label={label}
-                   style={{
-                  width: '36px', height: '36px', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center',
-                  border: '1px solid rgba(247,244,237,0.15)',
-                  borderRadius: '2px', fontSize: '0.95rem',
-                  letterSpacing: '0.1em', color: 'rgba(247,244,237,0.5)',
-                  transition: 'all 0.2s ease'
-                }}>{icon}</a>
-              ))}
+                {
+                  icon: <FaInstagram />,
+                  url: 'https://www.instagram.com/elvrix_techsolutions?igsi=MTRwZ3pkMTAyMjZycA==',
+                  label: 'Twitter'
+                },
+                {
+                  icon: <FaLinkedinIn />,
+                  url: 'https://linkedin.com/company/elvrix-techsolutions',
+                  label: 'LinkedIn'
+                },
+                {
+                  icon: <FaGithub />,
+                  url: 'https://github.com/elvrixtechsolutions',
+                  label: 'GitHub'
+                }].map(({ icon, url, label }) => (
+                  <a key={label}
+                    href={url}
+                    target='_blank'
+                    rel='noopner noreferrer'
+                    aria-label={label}
+                    style={{
+                      width: '36px', height: '36px', display: 'flex',
+                      alignItems: 'center', justifyContent: 'center',
+                      border: '1px solid rgba(247,244,237,0.15)',
+                      borderRadius: '2px', fontSize: '0.95rem',
+                      letterSpacing: '0.1em', color: 'rgba(247,244,237,0.5)',
+                      transition: 'all 0.2s ease'
+                    }}>{icon}</a>
+                ))}
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Contact</h5>
             <ul>
-             <li><a href="mailto:elvrixtechsolution@gmail.com"> elvrixtechsolution@gmail.com </a></li>
+              <li><a href="mailto:techsolutionselvrix@gmail.com"> techsolutionselvrix@gmail.com </a></li>
               <li><a href="#">+91 90962 87077</a></li>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>

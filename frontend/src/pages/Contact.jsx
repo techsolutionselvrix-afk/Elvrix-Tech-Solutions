@@ -75,7 +75,7 @@ export default function Contact() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                 {[
-                  { label: 'Email', value: 'elvrixtechsolution@gmail.com' },
+                  { label: 'Email', value: 'techsolutionselvrix@gmail.com' },
                   { label: 'Phone', value: '+91 90962 87077' },
                   { label: 'Response Time', value: 'Within 24 hours' },
                 ].map(({ label, value }) => (
