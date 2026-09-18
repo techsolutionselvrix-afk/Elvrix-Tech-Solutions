@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Elvrix-Tech-Solutions">
       <div className="page-container">
         <Navigation />
         <main>
