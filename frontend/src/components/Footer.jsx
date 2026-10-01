@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Contact</h5>
             <ul>
-             <li><a href="mailto:elvrixtechsolution@gmail.com"> elvrixtechsolution@gmail.com </a></li>
+             <li><a href="mailto:Business@elvrixtechsolutions.com">Business@elvrixtechsolutions.com </a></li>
               <li><a href="#">+91 90962 87077</a></li>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
