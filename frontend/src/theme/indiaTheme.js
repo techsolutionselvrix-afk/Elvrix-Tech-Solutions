@@ -17,10 +17,27 @@ export function getIndiaTheme(date = new Date()) {
   return hour >= DAY_START_HOUR && hour < NIGHT_START_HOUR ? 'light' : 'dark';
 }
 
-export function applyIndiaTheme() {
-  const theme = getIndiaTheme();
+export function getCurrentTheme() {
+  const stored = localStorage.getItem('app-theme');
+  if (stored) return stored;
+  return getIndiaTheme();
+}
+
+export function applyIndiaTheme(manualTheme = null) {
+  let theme;
+  if (manualTheme) {
+    localStorage.setItem('app-theme', manualTheme);
+    theme = manualTheme;
+  } else {
+    theme = getCurrentTheme();
+  }
+  
   document.documentElement.setAttribute('data-theme', theme);
   document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
+  
+  // Dispatch custom event for React components to sync state
+  window.dispatchEvent(new Event('themechange'));
+  
   return theme;
 }
 
