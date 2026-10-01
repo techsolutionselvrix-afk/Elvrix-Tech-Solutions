@@ -77,9 +77,6 @@ export default function Contact() {
                 {[
 
                   { label: 'Email', value: 'mailto:Business@elvrixtechsolutions.com' },
-
-                  { label: 'Email', value: 'techsolutionselvrix@gmail.com' },
-
                   { label: 'Phone', value: '+91 90962 87077' },
                   { label: 'Response Time', value: 'Within 24 hours' },
                 ].map(({ label, value }) => (

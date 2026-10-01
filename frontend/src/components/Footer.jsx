@@ -77,9 +77,6 @@ export default function Footer() {
             <ul>
 
              <li><a href="mailto:Business@elvrixtechsolutions.com">Business@elvrixtechsolutions.com </a></li>
-
-              <li><a href="mailto:techsolutionselvrix@gmail.com"> techsolutionselvrix@gmail.com </a></li>
-
               <li><a href="#">+91 90962 87077</a></li>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
