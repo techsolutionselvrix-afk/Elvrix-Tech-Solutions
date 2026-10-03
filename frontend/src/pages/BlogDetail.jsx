@@ -8,7 +8,8 @@ const blogs = [
     title: "Professional Website Development for Modern Businesses",
     description:
       "A professional website should do more than look attractive. It should help visitors understand your business, explore your services, build trust and take meaningful action.",
-    image: "/images/blog/professional-website.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdFocu8GDqW2rhtkL5wklPEf2XWUQBffpEBTJ-iLbxycWD6SPhpvDL9PE&s=10",
 
     content: `
       A professional website is often the first interaction a customer
@@ -30,7 +31,8 @@ const blogs = [
     title: "Why Website Development Should Start With Strategy",
     description:
       "Before choosing a template or writing code, a successful website should begin with understanding your customers, business goals, services and the actions you want visitors to take.",
-    image: "/images/blog/website-strategy.jpg",
+    image:
+      "https://www.idslogic.co.uk/wp-content/uploads/2025/12/Steps-Involved-in-the-Website-Development-Process-1.webp",
 
     content: `
       Website development should begin with strategy rather than design
@@ -51,7 +53,8 @@ const blogs = [
     title: "Why Responsive Web Development Is Essential",
     description:
       "Your customers may visit your website from smartphones, tablets or desktops. A responsive website adapts to different screen sizes while keeping content readable and easy to use.",
-    image: "/images/blog/responsive-web.jpg",
+    image:
+      "https://www.uplers.com/wp-content/uploads/2024/11/5.Responsive-Web-Design_-Why-It-Matters-in-2024.png",
 
     content: `
       People access websites from many different devices.
@@ -74,7 +77,8 @@ const blogs = [
     title: "How to Build an SEO-Friendly Website",
     description:
       "SEO and web development should work together. Clear page structures, helpful headings, descriptive URLs, internal links and optimized images can create a better foundation for search visibility.",
-    image: "/images/blog/seo-website.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_bKYTPpNuID1vJewGCUZgglI-gZusqN9V86OCM1db2-m_cYOThhcOLE&s=10",
 
     content: `
       SEO should be considered during website development rather than
@@ -97,7 +101,8 @@ const blogs = [
     title: "Website Speed and Security: The Essentials",
     description:
       "A website needs to be fast, reliable and secure. Optimized images, efficient code, good hosting, HTTPS, secure authentication and regular updates all contribute to a better website.",
-    image: "/images/blog/speed-security.jpg",
+    image:
+      "https://www.velocityconsultancy.com/wp-content/uploads/2018/08/post-32.jpg",
 
     content: `
       Website performance affects the experience visitors have on a
@@ -118,7 +123,8 @@ const blogs = [
     title: "Building Trust Through Your Website",
     description:
       "Visitors want to know who is behind a business before contacting them. Genuine testimonials, clear contact information, project examples, team details and transparent information can help build trust.",
-    image: "/images/blog/building-trust.jpg",
+    image:
+      "https://www.pixelfish.com.au/wp-content/uploads/How-To-Build-Trust-Through-Your-Website.jpg",
 
     content: `
       A website should help visitors feel confident about the business.
@@ -134,7 +140,6 @@ const blogs = [
 ];
 
 export default function BlogDetails() {
-
   const { id } = useParams();
 
   const blog = blogs.find((item) => item.id === id);
@@ -142,36 +147,24 @@ export default function BlogDetails() {
   if (!blog) {
     return (
       <div className="blog-not-found">
-
         <h1>Blog Not Found</h1>
 
-        <Link to="/blog">
-          Back to Blogs
-        </Link>
-
+        <Link to="/blog">Back to Blogs</Link>
       </div>
     );
   }
 
   return (
     <main className="blog-details-page">
-
       {/* HERO */}
 
       <section className="grid-bg section blog-details-hero">
-
         <div className="container">
-
-          <Link
-            to="/blog"
-            className="blog-back-link"
-          >
+          <Link to="/blog" className="blog-back-link">
             ← BACK TO BLOGS
           </Link>
 
-          <div className="section-label">
-            {blog.category}
-          </div>
+          <div className="section-label">{blog.category}</div>
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -181,63 +174,39 @@ export default function BlogDetails() {
             {blog.title}
           </motion.h1>
 
-          <p className="blog-details-description">
-            {blog.description}
-          </p>
-
+          <p className="blog-details-description">{blog.description}</p>
         </div>
-
       </section>
-
 
       {/* IMAGE */}
 
       <section className="section">
-
         <div className="container">
-
           <motion.div
             className="blog-details-image"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-
-            <img
-              src={blog.image}
-              alt={blog.title}
-            />
-
+            <img src={blog.image} alt={blog.title} />
           </motion.div>
-
         </div>
-
       </section>
-
 
       {/* CONTENT */}
 
       <section className="section blog-details-content-section">
-
         <div className="container">
-
           <div className="blog-details-content">
-
             {blog.content
               .trim()
               .split("\n\n")
               .map((paragraph, index) => (
-                <p key={index}>
-                  {paragraph.trim()}
-                </p>
+                <p key={index}>{paragraph.trim()}</p>
               ))}
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

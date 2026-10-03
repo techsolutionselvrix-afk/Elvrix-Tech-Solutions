@@ -29,7 +29,8 @@ const blogs = [
     date: "10 SEP 2026",
     readTime: "6 MIN READ",
     author: "ELVRIX TEAM",
-    image: "/images/blog/professional-website.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdFocu8GDqW2rhtkL5wklPEf2XWUQBffpEBTJ-iLbxycWD6SPhpvDL9PE&s=10",
   },
 
   {
@@ -41,7 +42,8 @@ const blogs = [
     date: "10 SEP 2026",
     readTime: "5 MIN READ",
     author: "ELVRIX TEAM",
-    image: "/images/blog/website-strategy.jpg",
+    image:
+      "https://www.idslogic.co.uk/wp-content/uploads/2025/12/Steps-Involved-in-the-Website-Development-Process-1.webp",
   },
 
   {
@@ -53,7 +55,8 @@ const blogs = [
     date: "10 SEP 2026",
     readTime: "5 MIN READ",
     author: "ELVRIX TEAM",
-    image: "/images/blog/responsive-web.jpg",
+    image:
+      "https://www.uplers.com/wp-content/uploads/2024/11/5.Responsive-Web-Design_-Why-It-Matters-in-2024.png",
   },
 
   {
@@ -65,7 +68,8 @@ const blogs = [
     date: "10 SEP 2026",
     readTime: "7 MIN READ",
     author: "ELVRIX TEAM",
-    image: "/images/blog/seo-website.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_bKYTPpNuID1vJewGCUZgglI-gZusqN9V86OCM1db2-m_cYOThhcOLE&s=10",
   },
 
   {
@@ -77,7 +81,8 @@ const blogs = [
     date: "10 SEP 2026",
     readTime: "6 MIN READ",
     author: "ELVRIX TEAM",
-    image: "/images/blog/speed-security.jpg",
+    image:
+      "https://www.velocityconsultancy.com/wp-content/uploads/2018/08/post-32.jpg",
   },
 
   {
@@ -89,7 +94,8 @@ const blogs = [
     date: "10 SEP 2026",
     readTime: "5 MIN READ",
     author: "ELVRIX TEAM",
-    image: "/images/blog/building-trust.jpg",
+    image:
+      "https://www.pixelfish.com.au/wp-content/uploads/How-To-Build-Trust-Through-Your-Website.jpg",
   },
 ];
 

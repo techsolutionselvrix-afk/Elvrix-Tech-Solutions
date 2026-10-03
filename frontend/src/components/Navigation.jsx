@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Sun, Moon } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Sun, Moon } from "lucide-react";
 import logo from "../assets/logo.png";
-import { applyIndiaTheme, getCurrentTheme } from '../theme/indiaTheme';
+import { applyIndiaTheme, getCurrentTheme } from "../theme/indiaTheme";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,46 +12,50 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Sync theme with custom event
   useEffect(() => {
     const handleThemeChange = () => setTheme(getCurrentTheme());
-    window.addEventListener('themechange', handleThemeChange);
-    return () => window.removeEventListener('themechange', handleThemeChange);
+    window.addEventListener("themechange", handleThemeChange);
+    return () => window.removeEventListener("themechange", handleThemeChange);
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === "light" ? "dark" : "light";
     applyIndiaTheme(newTheme);
   };
 
   // Close menu on route change
-  useEffect(() => { setMenuOpen(false); }, [location]);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   // Prevent body scroll when menu open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const links = [
-    { to: '/', label: 'Home' },
-    { to: '/service', label: 'Services' },
-    { to: '/about', label: 'About Us' },
-    {to:'/blog',label:'Blog'},
-    { to: '/work', label: 'Work' },
-    { to: '/contact', label: 'Contact' },
+    { to: "/", label: "Home" },
+    { to: "/service", label: "Services" },
+    { to: "/about", label: "About Us" },
+    { to: "/blog", label: "Blog" },
+    { to: "/work", label: "Work" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-content">
           <Link to="/" className="logo">
-           <img style={{width:"70px",height:"70px"}} src={logo} alt="" />
+            <img style={{ width: "70px", height: "70px" }} src={logo} alt="" />
           </Link>
 
           {/* Desktop links */}
@@ -60,31 +64,43 @@ export default function Navigation() {
               <Link
                 key={to}
                 to={to}
-                className={`nav-link ${location.pathname === to ? 'active' : ''}`}
+                className={`nav-link ${location.pathname === to ? "active" : ""}`}
               >
                 {label}
               </Link>
             ))}
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <button
               onClick={toggleTheme}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text)', display: 'flex', alignItems: 'center', padding: '0.5rem' }}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "var(--color-text)",
+                display: "flex",
+                alignItems: "center",
+                padding: "0.5rem",
+              }}
               aria-label="Toggle theme"
             >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
             </button>
 
             {/* Desktop CTA */}
-            <Link to="/contact" className="btn btn-primary nav-cta-btn" style={{ fontSize: '0.75rem', padding: '0.6rem 1.5rem' }}>
+            <Link
+              to="/contact"
+              className="btn btn-primary nav-cta-btn"
+              style={{ fontSize: "0.75rem", padding: "0.6rem 1.5rem" }}
+            >
               Get in Touch
             </Link>
 
             {/* Hamburger button (mobile only) */}
             <button
-              className={`mobile-menu-btn ${menuOpen ? 'open' : ''}`}
-              onClick={() => setMenuOpen(o => !o)}
+              className={`mobile-menu-btn ${menuOpen ? "open" : ""}`}
+              onClick={() => setMenuOpen((o) => !o)}
               aria-label="Toggle menu"
             >
               <span />
@@ -96,9 +112,21 @@ export default function Navigation() {
       </nav>
 
       {/* ── Mobile fullscreen drawer ── */}
-      <div className={`mobile-nav-drawer ${menuOpen ? 'open' : ''}`}>
+      <div className={`mobile-nav-drawer ${menuOpen ? "open" : ""}`}>
         {/* Close X area — clicking outside links */}
-        <div style={{ position: 'absolute', top: '1.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 1.5rem' }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "1.5rem",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0 1.5rem",
+          }}
+        >
           <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
             Elvrix<span className="logo-dot">.</span>Tech
           </Link>
@@ -117,19 +145,32 @@ export default function Navigation() {
           <Link
             key={to}
             to={to}
-            className={`mobile-nav-link ${location.pathname === to ? 'active' : ''}`}
+            className={`mobile-nav-link ${location.pathname === to ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             {label}
           </Link>
         ))}
 
-        <Link to="/contact" className="btn btn-primary" style={{ marginTop: '1rem', fontSize: '0.85rem' }} onClick={() => setMenuOpen(false)}>
+        <Link
+          to="/contact"
+          className="btn btn-primary"
+          style={{ marginTop: "1rem", fontSize: "0.85rem" }}
+          onClick={() => setMenuOpen(false)}
+        >
           Get in Touch
         </Link>
 
         {/* Decorative dot */}
-        <div style={{ position: 'absolute', bottom: '2rem', width: '8px', height: '8px', background: 'var(--color-accent)' }} />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "2rem",
+            width: "8px",
+            height: "8px",
+            background: "var(--color-accent)",
+          }}
+        />
       </div>
     </>
   );

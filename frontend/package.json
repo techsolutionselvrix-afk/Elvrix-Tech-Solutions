@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@eslint/js": "^8.57.1",
     "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "prettier": "^3.9.9",
     "typescript": "~6.0.2",
     "vite": "^8.2.2"
   },
