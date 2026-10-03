@@ -137,16 +137,9 @@ export default function Contact() {
                 }}
               >
                 {[
-<<<<<<< HEAD
-                  { label: "Email", value: "techsolutionselvrix@gmail.com" },
+                  { label: "Email", value: "Business@elvrixtechsolutions.com" },
                   { label: "Phone", value: "+91 90962 87077" },
                   { label: "Response Time", value: "Within 24 hours" },
-=======
-
-                  { label: 'Email', value: 'mailto:Business@elvrixtechsolutions.com' },
-                  { label: 'Phone', value: '+91 90962 87077' },
-                  { label: 'Response Time', value: 'Within 24 hours' },
->>>>>>> 7b7559878e47b462f1e04965e019bef8e95b8a70
                 ].map(({ label, value }) => (
                   <div
                     key={label}
