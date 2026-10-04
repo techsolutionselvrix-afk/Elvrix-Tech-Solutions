@@ -11,6 +11,7 @@ import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetail";
+import TermsAndConditions from "./pages/TermsAndConditions";
 import {
   applyIndiaTheme,
   msUntilNextIndiaThemeSwitch,
@@ -61,6 +62,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/work" element={<Work />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
           </Routes>
         </main>
         <WhatsAppButton />
