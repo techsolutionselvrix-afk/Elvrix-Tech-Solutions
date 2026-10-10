@@ -16,10 +16,10 @@ const fadeUp = {
 };
 
 const privacyContent = {
-  lastUpdated: "[DD/MM/YYYY]",
+  lastUpdated: "10-10-2026",
 
   intro:
-    "Elvrix TechSolutions (“Elvrix TechSolutions”, “we”, “us”, or “our”) respects your privacy and is committed to protecting the personal information you provide when you visit or use our website, services, or communicate with us. This Privacy Policy explains what information we may collect, how we use it, when we may share it, how we protect it, and the choices and rights available to you. By using our website or voluntarily providing your personal information to us, you acknowledge that you have read and understood this Privacy Policy.",
+    "Elvrix TechSolutions respects your privacy and is committed to protecting the personal information you provide when you visit or use our website, services, or communicate with us. This Privacy Policy explains what information we may collect, how we use it, when we may share it, how we protect it, and the choices and rights available to you. By using our website or voluntarily providing your personal information to us, you acknowledge that you have read and understood this Privacy Policy.",
 
   sections: [
     {
