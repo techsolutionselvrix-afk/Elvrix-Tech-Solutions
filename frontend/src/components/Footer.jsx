@@ -117,7 +117,7 @@ export default function Footer() {
                 <a href="#">+91 90962 87077</a>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+               <Link to="/privacy-policy">Privacy Policy</Link>
               </li>
               <li>
                 <Link to="/terms">Terms of Service</Link>

@@ -16,6 +16,7 @@ import {
   applyIndiaTheme,
   msUntilNextIndiaThemeSwitch,
 } from "./theme/indiaTheme";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   useEffect(() => {
@@ -62,6 +63,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/work" element={<Work />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsAndConditions />} />
           </Routes>
         </main>
