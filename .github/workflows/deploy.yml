@@ -37,10 +37,19 @@ jobs:
         working-directory: ./frontend
         run: npm run build
 
-      # This step duplicates index.html to 404.html to prevent React Router pages from breaking on refresh
-      - name: Handle SPA Routing 
+      # Pre-render static entry files for each client-side route so that
+      # GitHub Pages returns HTTP 200 (not 404) for deep links. This is
+      # required for Google Search Console indexing — the 404.html SPA
+      # fallback trick boots the app but still returns a 404 status code,
+      # which Google treats as "page not found" and refuses to index.
+      - name: Handle SPA Routing
         working-directory: ./frontend
-        run: cp dist/index.html dist/404.html
+        run: |
+          cp dist/index.html dist/404.html
+          for route in service about blog work contact terms privacy-policy; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4

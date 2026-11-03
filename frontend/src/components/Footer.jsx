@@ -37,7 +37,7 @@ export default function Footer() {
                   key={label}
                   href={url}
                   target="_blank"
-                  rel="noopner noreferrer"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   style={{
                     width: "36px",
