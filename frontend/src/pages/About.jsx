@@ -173,7 +173,7 @@ export default function About() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 400, fontSize: "0.9rem" }}>
-                      Arharva Panbude
+                      Atharva Panbude
                     </div>
                     <div
                       style={{
