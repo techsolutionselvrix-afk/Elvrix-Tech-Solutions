@@ -169,11 +169,11 @@ export default function About() {
                       fontSize: "1rem",
                     }}
                   >
-                    AV
+                    AP
                   </div>
                   <div>
                     <div style={{ fontWeight: 400, fontSize: "0.9rem" }}>
-                      Aria Vance
+                      Arharva Panbude
                     </div>
                     <div
                       style={{
